@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className=" px-6 lg:px-8 py-8">
       <div className="mx-auto mt-16 rounded-xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
         <div className="p-8 sm:p-10 lg:flex-auto relative overflow-hidden">
-          <div className="flex mb-20">
+          <div className="flex mb-40">
             <div className="flex justify-between flex-grow ">
               <div className=" w-full">
                 <h1 className="font-semibold leading-5">
@@ -119,7 +119,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-1/3 left-1/2 transform -translate-x-1/2">
+          <div className="absolute -bottom-1/4 left-1/2 transform -translate-x-1/2">
             <h1 className="text-[12rem] font-extrabold font-title tracking-wider">
               gcris<span className="text-green-500">tian</span>ber
             </h1>

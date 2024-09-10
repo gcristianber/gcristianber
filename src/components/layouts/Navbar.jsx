@@ -43,11 +43,11 @@ const Navbar = () => {
                 className={`text-sm font-medium bg-white lg:px-4 lg:py-2 rounded-full hover:bg-gray-100 transition-colors
               inline-flex items-center gap-2 ${
                 link.isCurrent
-                  ? " text-violet-700 fill-violet-700"
+                  ? " text-violet-700 fill-violet-700 "
                   : " text-gray-500 fill-gray-500"
               }`}
               >
-                {link.icon}
+                {/* {link.icon} */}
                 {link.title}
               </Link>
             </li>
