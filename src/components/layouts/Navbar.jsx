@@ -1,33 +1,29 @@
 import React, { useState } from "react";
 import Button from "@/components/ui/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navigations = [
   {
     id: 1,
     href: "/",
     title: "Home",
-    isCurrent: true,
-    icon: <box-icon type="solid" name="cube-alt"></box-icon>,
   },
   {
     id: 2,
-    href: "/timeline",
-    title: "Timeline",
-    isCurrent: false,
-    icon: <box-icon name="popsicle"></box-icon>,
+    href: "/showroom",
+    title: "Showroom",
   },
   {
     id: 3,
-    href: "/projects",
-    title: "Projects",
-    isCurrent: false,
-    icon: <box-icon name="code-alt"></box-icon>,
+    href: "/timeline",
+    title: "Timeline",
   },
+
 ];
 
 const Navbar = () => {
   const [isDarkMode, setDarkMode] = useState(false);
+
   return (
     <header className="w-full fixed top-0 left-0 bg-white z-10">
       <nav className="px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -42,12 +38,12 @@ const Navbar = () => {
                 to={link.href}
                 className={`text-sm font-medium bg-white lg:px-4 lg:py-2 rounded-full hover:bg-gray-100 transition-colors
               inline-flex items-center gap-2 ${
-                link.isCurrent
+                // link.isCurrent
+                useLocation().pathname === link.href
                   ? " text-violet-700 fill-violet-700 "
                   : " text-gray-500 fill-gray-500"
               }`}
               >
-                {/* {link.icon} */}
                 {link.title}
               </Link>
             </li>
