@@ -1,31 +1,163 @@
 import React from "react";
+import { BoxIcon } from "lucide-react";
+import Stacks from "@/components/layouts/Stacks";
 
-const stacks = [
-  { imgUrl: "./assets/images/logos/bootstrap.svg", altText: "bootstrap" },
-  { imgUrl: "./assets/images/logos/firebase.svg", altText: "firebase" },
-  { imgUrl: "./assets/images/logos/html5.svg", altText: "html5" },
-  { imgUrl: "./assets/images/logos/javascript.svg", altText: "javascript" },
-  { imgUrl: "./assets/images/logos/laravel.svg", altText: "laravel" },
-  { imgUrl: "./assets/images/logos/mapbox.svg", altText: "mapbox" },
-  { imgUrl: "./assets/images/logos/mysql.svg", altText: "mysql" },
-  { imgUrl: "./assets/images/logos/nodejs.svg", altText: "nodejs" },
-  { imgUrl: "./assets/images/logos/php.svg", altText: "php" },
-  { imgUrl: "./assets/images/logos/tailwindcss.svg", altText: "tailwindcss" },
-  { imgUrl: "./assets/images/logos/vite.svg", altText: "vite" },
-  { imgUrl: "./assets/images/logos/vuejs.svg", altText: "vuejs" },
-  { imgUrl: "./assets/images/logos/figma.svg", altText: "figma" },
-  { imgUrl: "./assets/images/logos/flutter.svg", altText: "flutter" },
-  { imgUrl: "./assets/images/logos/cpp.svg", altText: "cpp" },
-  { imgUrl: "./assets/images/logos/java.svg", altText: "java" },
+
+const webProjects = [
+  {
+    id: 1,
+    title: "Logistic Management System",
+    href: "#",
+    imgBanner:
+      "https://market-resized.envatousercontent.com/themeforest.net/files/407794364/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b217d961b4ab77730393f224ed66e3688f8f64dc3aa19701b447b4614d20494",
+    description: "Stream lining a deliveries with modern technologies",
+    date: "Oct 05, 2023",
+    datetime: "2023-10-05",
+    category: { title: "Capstone Project", href: "#" },
+    techStacks: [
+      {
+        imgLogoUrl: "./assets/images/logos/php.svg",
+        altText: "Vite",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/html5.svg",
+        altText: "HTML5",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/javascript.svg",
+        altText: "Javascript",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/bootstrap.svg",
+        altText: "Bootstrap",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/mysql.svg",
+        altText: "MySQL",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/mapbox.svg",
+        altText: "Mapbox",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/firebase.svg",
+        altText: "Firebase",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/nodejs.svg",
+        altText: "NodeJS",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Simple Color Picking App",
+    href: "#",
+    imgBanner:
+      "https://github.com/gcristianber/color-picking-app-qs/raw/master/screenshots/default-v2.jpg",
+    description:
+      " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis illum deleniti ipsum! ",
+    date: "Oct 05, 2023",
+    datetime: "2023-10-05",
+    category: { title: "Personal", href: "#" },
+    techStacks: [
+      {
+        imgLogoUrl: "./assets/images/logos/vite.svg",
+        altText: "Vite",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/vuejs.svg",
+        altText: "VueJS",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/html5.svg",
+        altText: "HTML5",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/javascript.svg",
+        altText: "Javascript",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/tailwindcss.svg",
+        altText: "TailwindCSS",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Payroll & Employee Self-Service System",
+    href: "#",
+    imgBanner: "https://placehold.co/600x400?text=No+Image+Preview",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde.",
+    date: "Oct 05, 2023",
+    datetime: "2023-10-05",
+    category: { title: "Personal", href: "#" },
+    techStacks: [
+      {
+        imgLogoUrl: "./assets/images/logos/laravel.svg",
+        altText: "Laravel",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/mysql.svg",
+        altText: "MySQL",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/html5.svg",
+        altText: "HTML5",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/javascript.svg",
+        altText: "Javascript",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/bootstrap.svg",
+        altText: "Bootstrap",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Cinema Booking Management System",
+    href: "#",
+    imgBanner: "https://placehold.co/600x400?text=No+Image+Preview",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde.",
+    date: "Oct 05, 2023",
+    datetime: "2023-10-05",
+    category: { title: "Personal", href: "#" },
+    techStacks: [
+      {
+        imgLogoUrl: "./assets/images/logos/php.svg",
+        altText: "Php",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/mysql.svg",
+        altText: "MySQL",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/html5.svg",
+        altText: "HTML5",
+      },
+      {
+        imgLogoUrl: "./assets/images/logos/javascript.svg",
+        altText: "Javascript",
+      },
+    ],
+  },
 ];
 
 const Showroom = () => {
   return (
     <>
       <section className="relative isolate overflow-hidden py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative pt-60 overflow-hidden">
-          <img className="absolute top-0 left-0 -z-10 w-full max-h-72 object-cover rounded-2xl
-          " src="https://images.unsplash.com/photo-1720802616209-c174c23f6565?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative pt-64 overflow-hidden">
+          <img
+            className="absolute top-0 left-0 -z-10 w-full max-h-72 object-cover rounded-t-2xl
+          "
+            src="https://images.unsplash.com/photo-1579403124614-197f69d8187b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
           <div className="w-full h-72 max-h-72 bg-gradient-to-t -z-10 from-white absolute top-0 -left-0"></div>
 
           <div className="mx-auto max-w-2xl text-center">
@@ -33,38 +165,71 @@ const Showroom = () => {
               The Showroom
             </h2>
             <p className="mt-6 text-base leading-8 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-              quaerat consectetur quibusdam voluptatum ut impedit autem eius
-              doloremque in ipsam?
+              Step into a showcase of innovative web solutions and thoughtfully
+              crafted UI/UX designs, where creativity meets functionality.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative group">
-          <div className="h-16 w-56 bg-gradient-to-r from-white absolute left-0 z-10" />
-          <div className="h-16 w-56 bg-gradient-to-l from-white absolute right-0 z-10" />
-          <ul className="flex items-center space-x-16 animate-loop-scroll group-hover:paused">
-            {stacks.map((stack) => (
-              <li key={stack.imgUrl}>
-                <img
-                  src={stack.imgUrl}
-                  alt={stack.altText}
-                  className="h-14 min-h-14 w-16 min-w-16"
-                />
-              </li>
-            ))}
-            {stacks.map((stack) => (
-              <li key={stack.imgUrl}>
-                <img
-                  src={stack.imgUrl}
-                  alt={stack.altText}
-                  className="h-14 min-h-14 w-16 min-w-16"
-                />
-              </li>
-            ))}
-          </ul>
+      <Stacks/>
+
+      <section className="relative isolate overflow-hidden py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+            <h3 className="text-base font-semibold text-slate-900">
+              Web Projects
+            </h3>
+            <ul className="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+              {webProjects.map((project) => (
+                <li key={project.id}>
+                  <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                    <img
+                      src="https://market-resized.envatousercontent.com/themeforest.net/files/407794364/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b217d961b4ab77730393f224ed66e3688f8f64dc3aa19701b447b4614d20494"
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-4 flex items-center gap-x-4 text-xs">
+                    <time dateTime={project.datetime} className="text-gray-500">
+                      {project.date}
+                    </time>
+                    <a
+                      href={project.category.href}
+                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                    >
+                      {project.category.title}
+                    </a>
+                  </div>
+                  <h4 className="mt-2 text-sm font-medium text-slate-900 group-hover:text-indigo-600">
+                    <a href="/components/marketing/sections/heroes">
+                      <span className="relative">{project.title}</span>
+                    </a>
+                  </h4>
+                  <p className="relative mt-1.5 text-xs font-medium text-slate-500 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <ul className="mt-1.5 flex flex-wrap gap-2l">
+                    {project.techStacks.map((stack) => (
+                      <li key={stack.id}>
+                        <a
+                          href="#"
+                          role="button"
+                          className="inline-flex items-center justify-center bg-white aspect-square h-10 rounded-full hover:bg-gray-100 transition-colors"
+                        >
+                          <img
+                            src={stack.imgLogoUrl}
+                            alt={stack.altText}
+                            className="h-5 w-5 object-scale-down"
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

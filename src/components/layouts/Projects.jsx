@@ -162,7 +162,7 @@ const Projects = () => {
             className="flex max-w-xl flex-col items-start justify-between relative overflow-hidden"
           >
             <img
-              class="h-64 w-full rounded-lg border object-cover mb-4"
+              className="h-64 w-full rounded-lg border object-cover mb-4"
               src={post.imgBanner}
               alt="image description"
             />

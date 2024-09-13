@@ -9,6 +9,7 @@ const App = () => {
     <ReactLenis root>
       <div className="mx-auto max-w-7xl">
         <Navbar />
+        
         <Outlet />
 
         <Footer />

@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
+import { Moon, Sun } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+
+import { Switch } from "@headlessui/react";
 
 const navigations = [
   {
@@ -18,30 +21,34 @@ const navigations = [
     href: "/timeline",
     title: "Timeline",
   },
-
 ];
 
 const Navbar = () => {
-  const [isDarkMode, setDarkMode] = useState(false);
+
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(()=>{
+      document.documentElement.classList.toggle("dark", enabled);
+  }, [enabled])
 
   return (
-    <header className="w-full fixed top-0 left-0 bg-white z-10">
+    <header className="w-full fixed top-0 left-0 bg-white dark:bg-neutral-900 z-50">
       <nav className="px-6 lg:px-8 py-4 flex items-center justify-between">
         <a href="#" className=" flex-1">
           <img src="./vite.svg" alt="Vite Logo" />
         </a>
 
-        <ul className="flex items-center justify-center gap-4 flex-1">
+        <ul className="hidden lg:flex items-center justify-center gap-4 flex-1">
           {navigations.map((link) => (
-            <li>
+            <li key={link.id}>
               <Link
                 to={link.href}
-                className={`text-sm font-medium bg-white lg:px-4 lg:py-2 rounded-full hover:bg-gray-100 transition-colors
+                className={`text-sm font-medium bg-white dark:bg-neutral-800 dark:text-neutral-200  lg:px-4 lg:py-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-200 group transition-colors
               inline-flex items-center gap-2 ${
                 // link.isCurrent
                 useLocation().pathname === link.href
-                  ? " text-violet-700 fill-violet-700 "
-                  : " text-gray-500 fill-gray-500"
+                  ? " text-violet-700 fill-violet-700 dark:text-purple-600 dark:fill-purple-600"
+                  : " text-gray-500 fill-gray-500 dark:hover:text-neutral-900"
               }`}
               >
                 {link.title}
@@ -51,17 +58,25 @@ const Navbar = () => {
         </ul>
 
         <div className="inline-flex items-center justify-end gap-4  flex-shrink-0 flex-1">
-          <button
-            type="button"
-            className="inline-flex items-center bg-white p-2 rounded-full hover:bg-gray-100 transition-colors"
-            onClick={() => setDarkMode(!isDarkMode)}
+
+          <Switch
+            checked={enabled}
+            onChange={setEnabled}
+            className={`${
+              enabled ? "bg-neutral-800" : "bg-gray-200"
+            } relative inline-flex h-6 w-11 items-center rounded-full`}
           >
-            {isDarkMode ? (
-              <box-icon name="toggle-left"></box-icon>
-            ) : (
-              <box-icon name="toggle-right" type="solid"></box-icon>
-            )}
-          </button>
+            <span className="sr-only">Enable notifications</span>
+
+            <span
+              className={`${
+                enabled ? "translate-x-6 bg-neutral-950 text-white" : "translate-x-0 bg-white"
+              } p-1.5 rounded-full transform transition ease-linear duration-150`}
+            >
+              {enabled ? <Moon size={12} strokeWidth={2} /> : <Sun size={12} strokeWidth={2} />}
+            </span>
+          </Switch>
+
           <Button>Connect with me</Button>
         </div>
       </nav>

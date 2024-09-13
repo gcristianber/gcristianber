@@ -1,0 +1,46 @@
+[
+    {
+        "id" : 1,
+        "title": "",
+        "thumbnail": {
+            "href": "https://images.example.com/thumbnail",
+            "alt": "Sample Thumbnail"
+        },
+        "repository": "https://github.com/user/project",
+        "preview": "https://project.com",
+        "snapshots": [
+            {
+                "id": 1,
+                "image": {
+                    "href": "https://images.example.com/sample/1",
+                    "alt": "Sample Thumbnail 1"
+                }
+            },
+            {
+                "id": 2,
+                "image": {
+                    "href": "https://images.example.com/sample/2",
+                    "alt": "Sample Thumbnail 2"
+                }
+            }
+        ],
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, totam.",
+        "duration": "7 days",
+        "technologies": [
+            {
+                "id": 1,
+                "image": {
+                    "href": "https://images.example.com/sample/icon/1",
+                    "alt": "Sample Icon 1"
+                }
+            },
+            {
+                "id": 2,
+                "image": {
+                    "href": "https://images.example.com/sample/icon/2",
+                    "alt": "Sample Icon 2"
+                }
+            }
+        ]
+    }
+]
