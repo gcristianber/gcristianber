@@ -7,9 +7,8 @@ import Footer from "@/components/layouts/Footer";
 const App = () => {
   return (
     <ReactLenis root>
+      <Navbar />
       <div className="mx-auto max-w-7xl">
-        <Navbar />
-        
         <Outlet />
 
         <Footer />

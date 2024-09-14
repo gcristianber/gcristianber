@@ -22,8 +22,8 @@ const Stacks = () => {
   return (
     <section className="overflow-hidden">
     <div className="mx-auto max-w-7xl px-6 lg:px-8 relative group">
-      <div className="h-16 w-56 bg-gradient-to-r from-white absolute left-0 z-10" />
-      <div className="h-16 w-56 bg-gradient-to-l from-white absolute right-0 z-10" />
+      <div className="h-16 aspect-square lg:w-56 bg-gradient-to-r from-white dark:from-neutral-900 absolute left-0 z-10" />
+      <div className="h-16 aspect-square lg:w-56 bg-gradient-to-l from-white dark:from-neutral-900 absolute right-0 z-10" />
       <ul className="flex items-center space-x-16 animate-loop-scroll group-hover:paused">
         {stacks.map((stack) => (
           <li key={stack.imgUrl}>

@@ -158,13 +158,13 @@ const Showroom = () => {
             src="https://images.unsplash.com/photo-1579403124614-197f69d8187b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
-          <div className="w-full h-72 max-h-72 bg-gradient-to-t -z-10 from-white absolute top-0 -left-0"></div>
+          <div className="w-full h-72 max-h-72 bg-gradient-to-t -z-10 from-white dark:from-neutral-900 absolute top-0 -left-0"></div>
 
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-4xl font-bold tracking-tight  sm:text-6xl">
+          <div className="mx-auto max-w-2xl text-center ">
+            <h2 className="text-4xl font-bold tracking-tight  sm:text-6xl dark:text-neutral-200">
               The Showroom
             </h2>
-            <p className="mt-6 text-base leading-8 ">
+            <p className="mt-6 text-base leading-8 dark:text-neutral-300">
               Step into a showcase of innovative web solutions and thoughtfully
               crafted UI/UX designs, where creativity meets functionality.
             </p>
@@ -177,7 +177,7 @@ const Showroom = () => {
       <section className="relative isolate overflow-hidden py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-neutral-200">
               Web Projects
             </h3>
             <ul className="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
@@ -191,7 +191,7 @@ const Showroom = () => {
                     />
                   </div>
                   <div className="mt-4 flex items-center gap-x-4 text-xs">
-                    <time dateTime={project.datetime} className="text-gray-500">
+                    <time dateTime={project.datetime} className="text-gray-500 dark:text-neutral-300">
                       {project.date}
                     </time>
                     <a
@@ -201,21 +201,21 @@ const Showroom = () => {
                       {project.category.title}
                     </a>
                   </div>
-                  <h4 className="mt-2 text-sm font-medium text-slate-900 group-hover:text-indigo-600">
+                  <h4 className="mt-2 text-sm font-medium text-slate-900 dark:text-neutral-200 group-hover:text-indigo-600">
                     <a href="/components/marketing/sections/heroes">
                       <span className="relative">{project.title}</span>
                     </a>
                   </h4>
-                  <p className="relative mt-1.5 text-xs font-medium text-slate-500 line-clamp-2">
+                  <p className="relative py-4 text-xs font-medium text-slate-500 dark:text-neutral-300 line-clamp-2">
                     {project.description}
                   </p>
-                  <ul className="mt-1.5 flex flex-wrap gap-2l">
+                  <ul className="mt-1.5 flex flex-wrap gap-4">
                     {project.techStacks.map((stack) => (
                       <li key={stack.id}>
                         <a
                           href="#"
                           role="button"
-                          className="inline-flex items-center justify-center bg-white aspect-square h-10 rounded-full hover:bg-gray-100 transition-colors"
+                          className="inline-flex items-center justify-center bg-white dark:bg-neutral-800  aspect-square h-10 rounded-full hover:bg-gray-100 transition-colors"
                         >
                           <img
                             src={stack.imgLogoUrl}
