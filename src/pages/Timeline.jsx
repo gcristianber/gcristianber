@@ -119,6 +119,37 @@ const experiences = [
   },
 ];
 
+const educations = [
+  {
+    id: 1,
+    companyLogo: {
+      imgUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQG7P2KGNvEeEA/company-logo_100_100/company-logo_100_100/0/1708654516290/sandman_software_systems_inc_logo?e=1734566400&v=beta&t=J6lmnRl2FsjRIZRRbiBbRTy58VD796BKu6RTQoTCBFk",
+      altText: "Sandman Software Systems Inc.",
+    },
+    companyName: "Bestlink College of the Philippines",
+    jobTitle: "Bachelor's of Science in Information Technology",
+    jobDescription:
+      "Supports in maintaining and migrating the existing system into a latest version.",
+    startDate: "2019",
+    endDate: "2023",
+  },
+  {
+    id: 2,
+    companyLogo: {
+      imgUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQG7P2KGNvEeEA/company-logo_100_100/company-logo_100_100/0/1708654516290/sandman_software_systems_inc_logo?e=1734566400&v=beta&t=J6lmnRl2FsjRIZRRbiBbRTy58VD796BKu6RTQoTCBFk",
+      altText: "Sandman Software Systems Inc.",
+    },
+    companyName: "AMACC Fairview Campus",
+    jobTitle: "TVL ",
+    jobDescription:
+      "Supports in maintaining and migrating the existing system into a latest version.",
+    startDate: "2017",
+    endDate: "2019",
+  },
+];
+
 const sortedExperiences = experiences.sort((a, b) => {
   if (a.isCurrentJob && !b.isCurrentJob) return -1;
   if (!a.isCurrentJob && b.isCurrentJob) return 1;
@@ -131,75 +162,135 @@ const sortedExperiences = experiences.sort((a, b) => {
 
 const Timeline = () => {
   return (
-    <section className="relative isolate overflow-hidden py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight  sm:text-6xl">
-            Experiences
-          </h2>
-          <p className="mt-6 text-base leading-8 ">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum esse
-            deleniti minus odit corrupti quisquam eius magnam eaque, quidem
-            voluptatem.
-          </p>
-        </div>
-        <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <ul className="divide-y">
-            {sortedExperiences.map((experience) => (
-              <li key={experience.id} className="py-8 flex gap-2 items-start">
-                <a href="#" className="flex-shrink-0">
-                  <img
-                    className="border border-gray-200 bg-white rounded-lg h-14 w-14 "
-                    src={experience.companyLogo.imgUrl}
-                    alt={experience.companyLogo.altText}
-                  />
-                </a>
-                <dl>
-                  <dt>
-                    <h1 className="text-lg font-semibold leading-6">
-                      {experience.jobTitle}
-                    </h1>
-                    <p className="text-base leading-6">
-                      <span className="font-medium underline text-blue-500">
-                        {experience.companyName}
-                      </span>{" "}
-                      ·{" "}
-                      <span className="text-gray-600">
-                        {experience.workArrangement}
-                      </span>
-                    </p>
-                    <p className="text-sm leading-6">{`${
-                      experience.startDate
-                    } - ${
-                      experience.isCurrentJob ? "Present" : experience.endDate
-                    } `}</p>
-                  </dt>
-                  <dd>
-                    <p className="mt-2">{experience.jobDescription}</p>
+    <>
+      <section className="relative isolate overflow-hidden py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-neutral-900 dark:text-neutral-100">
+              Experiences
+            </h2>
+            <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
+              esse deleniti minus odit corrupti quisquam eius magnam eaque,
+              quidem voluptatem.
+            </p>
+          </div>
+          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            <ul className="divide-y dark:divide-neutral-800">
+              {sortedExperiences.map((experience) => (
+                <li key={experience.id} className="py-8 flex gap-4 items-start">
+                  <a href="#" className="flex-shrink-0">
+                    <img
+                      className="200 bg-white rounded-lg h-14 w-14 "
+                      src={experience.companyLogo.imgUrl}
+                      alt={experience.companyLogo.altText}
+                    />
+                  </a>
+                  <dl>
+                    <dt>
+                      <h1 className="text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
+                        {experience.jobTitle}
+                      </h1>
+                      <p className="text-base leading-6">
+                        <span className="font-medium underline text-blue-500">
+                          {experience.companyName}
+                        </span>{" "}
+                        ·{" "}
+                        <span className="text-neutral-700 dark:text-neutral-300">
+                          {experience.workArrangement}
+                        </span>
+                      </p>
+                      <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">{`${
+                        experience.startDate
+                      } - ${
+                        experience.isCurrentJob ? "Present" : experience.endDate
+                      } `}</p>
+                    </dt>
+                    <dd>
+                      <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+                        {experience.jobDescription}
+                      </p>
 
-                    <div className="mt-8">
-                      <ul className="flex flex-wrap gap-4 grayscale">
-                        {experience.hasTechstacks
-                          ? experience.techstacks.map((stack) => (
-                              <li key={stack.name}>
-                                <img
-                                  src={stack.imgUrl}
-                                  alt={stack.name}
-                                  className="h-8 w-8 object-scale-down"
-                                />
-                              </li>
-                            ))
-                          : ""}
-                      </ul>
-                    </div>
-                  </dd>
-                </dl>
-              </li>
-            ))}
-          </ul>
+                      <div className="mt-8">
+                        <ul className="flex flex-wrap gap-4 grayscale">
+                          {experience.hasTechstacks
+                            ? experience.techstacks.map((stack) => (
+                                <li key={stack.name}>
+                                  <img
+                                    src={stack.imgUrl}
+                                    alt={stack.name}
+                                    className="h-8 w-8 object-scale-down"
+                                  />
+                                </li>
+                              ))
+                            : ""}
+                        </ul>
+                      </div>
+                    </dd>
+                  </dl>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="relative isolate overflow-hidden py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-neutral-900 dark:text-neutral-100">
+              Education
+            </h2>
+            <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
+              esse deleniti minus odit corrupti quisquam eius magnam eaque,
+              quidem voluptatem.
+            </p>
+          </div>
+          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            <ul className="divide-y dark:divide-neutral-800">
+              {educations
+                .map((experience) => (
+                  <li
+                    key={experience.id}
+                    className="py-8 flex gap-4 items-start"
+                  >
+                    <a href="#" className="flex-shrink-0">
+                      <img
+                        className="200 bg-white rounded-lg h-14 w-14 "
+                        src={experience.companyLogo.imgUrl}
+                        alt={experience.companyLogo.altText}
+                      />
+                    </a>
+                    <dl>
+                      <dt>
+                        <h1 className="text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
+                          {experience.jobTitle}
+                        </h1>
+                        <p className="text-base leading-6">
+                          <span className="font-medium underline text-blue-500">
+                            {experience.companyName}
+                          </span>
+                        </p>
+                        <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">{`${experience.startDate} - ${experience.endDate} · Graduated`}</p>
+                      </dt>
+                    </dl>
+                  </li>
+                ))
+                .sort((a, b) => {
+                  if (a.isCurrentJob && !b.isCurrentJob) return -1;
+                  if (!a.isCurrentJob && b.isCurrentJob) return 1;
+
+                  const dateA = a.endDate ? new Date(a.endDate) : new Date();
+                  const dateB = b.endDate ? new Date(b.endDate) : new Date();
+
+                  return dateB - dateA;
+                })}
+            </ul>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

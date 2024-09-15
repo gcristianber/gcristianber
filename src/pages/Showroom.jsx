@@ -8,8 +8,7 @@ const webProjects = [
     id: 1,
     title: "Logistic Management System",
     href: "#",
-    imgBanner:
-      "https://market-resized.envatousercontent.com/themeforest.net/files/407794364/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b217d961b4ab77730393f224ed66e3688f8f64dc3aa19701b447b4614d20494",
+    imgBanner:"https://placehold.co/600x400?text=No+Image+Preview",
     description: "Stream lining a deliveries with modern technologies",
     date: "Oct 05, 2023",
     datetime: "2023-10-05",
@@ -185,7 +184,7 @@ const Showroom = () => {
                 <li key={project.id}>
                   <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
                     <img
-                      src="https://market-resized.envatousercontent.com/themeforest.net/files/407794364/01_preview.__large_preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=1b217d961b4ab77730393f224ed66e3688f8f64dc3aa19701b447b4614d20494"
+                      src={project.imgBanner}
                       alt=""
                       className="absolute inset-0 h-full w-full object-cover"
                     />

@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
-    "boxicons": "^2.1.4",
+    "boxicons": "^2.1.3",
+    "feather-icons": "^4.29.2",
     "lenis": "^1.1.13",
     "lorem-ipsum": "^2.0.8",
     "lucide-react": "^0.440.0",
