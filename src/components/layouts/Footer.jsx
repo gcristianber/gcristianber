@@ -69,7 +69,7 @@ const Footer = () => {
                   <ul className="">
                     <li className="font-medium text-sm mb-2">
                       <a
-                        href="#"
+                        href="https://www.facebook.com/supersantie"
                         className="fill-blue-500 inline-flex items-center gap-2 font-medium  text-neutral-900 dark:text-neutral-100"
                       >
                         <box-icon name="facebook-circle" type="logo"></box-icon>
@@ -78,7 +78,7 @@ const Footer = () => {
                     </li>
                     <li className="font-medium text-sm mb-2">
                       <a
-                        href=""
+                        href="https://www.linkedin.com/in/gcristianber/"
                         className="fill-blue-600 inline-flex items-center gap-2 font-medium  text-neutral-900 dark:text-neutral-100"
                       >
                         <box-icon name="linkedin-square" type="logo"></box-icon>
@@ -87,7 +87,7 @@ const Footer = () => {
                     </li>
                     <li className="font-medium text-sm mb-2">
                       <a
-                        href=""
+                        href="https://github.com/gcristianber"
                         className="inline-flex items-center gap-2 font-medium  text-neutral-900 dark:text-neutral-100"
                       >
                         <box-icon name="github" type="logo"></box-icon>
@@ -98,7 +98,7 @@ const Footer = () => {
                   <ul className="">
                     <li className="font-medium text-sm mb-2">
                       <a
-                        href="#"
+                        href="https://dribbble.com/supersanti"
                         className="fill-pink-500 inline-flex items-center gap-2 font-medium  text-neutral-900 dark:text-neutral-100"
                       >
                         <box-icon name="dribbble" type="logo"></box-icon>

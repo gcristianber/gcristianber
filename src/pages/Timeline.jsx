@@ -124,7 +124,7 @@ const educations = [
     id: 1,
     companyLogo: {
       imgUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQG7P2KGNvEeEA/company-logo_100_100/company-logo_100_100/0/1708654516290/sandman_software_systems_inc_logo?e=1734566400&v=beta&t=J6lmnRl2FsjRIZRRbiBbRTy58VD796BKu6RTQoTCBFk",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgZM7zIuiPWTUyN93M8HOiy17q0OvXxNMm3g&s",
       altText: "Sandman Software Systems Inc.",
     },
     companyName: "Bestlink College of the Philippines",
@@ -138,11 +138,11 @@ const educations = [
     id: 2,
     companyLogo: {
       imgUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQG7P2KGNvEeEA/company-logo_100_100/company-logo_100_100/0/1708654516290/sandman_software_systems_inc_logo?e=1734566400&v=beta&t=J6lmnRl2FsjRIZRRbiBbRTy58VD796BKu6RTQoTCBFk",
+        "https://www.amaes.edu.ph/wp-content/uploads/2022/11/cropped-AMAES-icon.png",
       altText: "Sandman Software Systems Inc.",
     },
     companyName: "AMACC Fairview Campus",
-    jobTitle: "TVL ",
+    jobTitle: "Information and Communication Technology",
     jobDescription:
       "Supports in maintaining and migrating the existing system into a latest version.",
     startDate: "2017",

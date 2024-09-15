@@ -121,7 +121,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/showroom"
+                to="/contact"
                 className="inline-flex gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500 transition-colors"
               >
                 <Inbox size={20} />
