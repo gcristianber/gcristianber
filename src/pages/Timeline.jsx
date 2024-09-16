@@ -54,7 +54,7 @@ const experiences = [
     companyName: "VPD Business Solutions Inc.",
     jobTitle: "UI/UX Developer",
     jobDescription:
-      "Led the enhancement of the SAAS ERP back-office system s user interface design, optimizing functionality and user engagement. Successfully managed and executed two projects as the sole developer, utilizing Laravel (PHP) to meet client expectations efficiently. Additionally, played a pivotal role in the development of a Point of Sale System using Flutter (Dart) as part of the company s software portfolio.",
+      "Led the enhancement of the SAAS ERP back-office system s user interface design, optimizing functionality and user engagement. Managed and executed two projects as the sole developer, utilizing Laravel (PHP) to meet client expectations efficiently. Additionally, played a pivotal role in the development of a Point of Sale System using Flutter (Dart) as part of the company s software portfolio.",
     workArrangement: "Contract",
     startDate: "Nov 2023",
     endDate: "May 2024",
@@ -117,6 +117,24 @@ const experiences = [
     hasTechstacks: false,
     techstacks: [],
   },
+  {
+    id: 4,
+    companyLogo: {
+      imgUrl:
+        "https://placehold.co/56x56/e5e7eb/d1d5db7eb?text=No+Image",
+      altText: "Board of Pardons & Parole",
+    },
+    companyName: "Board of Pardons & Parole",
+    jobTitle: "Office Clerk",
+    jobDescription:
+      "Organizes & maintains the prisoner's documents and helps the officers in their paperworks.",
+    workArrangement: "Intern",
+    startDate: "Dec 2018",
+    endDate: "Jan 2019",
+    isCurrentJob: false,
+    hasTechstacks: false,
+    techstacks: [],
+  },
 ];
 
 const educations = [
@@ -170,9 +188,7 @@ const Timeline = () => {
               Experiences
             </h2>
             <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
-              esse deleniti minus odit corrupti quisquam eius magnam eaque,
-              quidem voluptatem.
+            Throughout my career as a developer, I've embraced each opportunity to build, innovate, and solve complex problems. From refining code to crafting seamless user experiences, every project has deepened my expertise, pushing me to continuously evolve in the ever-changing tech landscape.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
@@ -212,7 +228,7 @@ const Timeline = () => {
                       </p>
 
                       <div className="mt-8">
-                        <ul className="flex flex-wrap gap-4 grayscale">
+                        <ul className="flex flex-wrap gap-4 grayscale dark:grayscale-0">
                           {experience.hasTechstacks
                             ? experience.techstacks.map((stack) => (
                                 <li key={stack.name}>
@@ -242,9 +258,7 @@ const Timeline = () => {
               Education
             </h2>
             <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
-              esse deleniti minus odit corrupti quisquam eius magnam eaque,
-              quidem voluptatem.
+            Throughout my academic journey, each school played a vital role in shaping my skills and perspective. From foundational learning to advanced concepts, these experiences built the framework for my passion, growth, and pursuit of excellence in the field.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

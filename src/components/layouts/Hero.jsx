@@ -1,14 +1,5 @@
 import React from "react";
 
-import {
-  Moon,
-  Sun,
-  House,
-  BriefcaseBusiness,
-  Coffee,
-  Inbox,
-} from "lucide-react";
-
 const Hero = () => {
   return (
     <section className="relative isolate px-6 lg:px-8">
@@ -19,7 +10,7 @@ const Hero = () => {
               <a
                 href="#"
                 role="button"
-                className="text-sm font-medium bg-white dark:bg-neutral-800 dark:text-neutral-100 px-4 py-2 rounded-full hover:bg-gray-100 transition-colors
+                className="text-sm font-medium bg-white dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700 px-4 py-2 rounded-full hover:bg-gray-100 transition-colors
               fill-red-500 inline-flex items-center gap-4"
               >
                 <img

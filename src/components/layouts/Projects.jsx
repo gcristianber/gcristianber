@@ -166,6 +166,7 @@ const Projects = () => {
               src={post.imgBanner}
               alt="image description"
             />
+            
             <div className="flex items-center gap-x-4 text-xs">
               <time dateTime={post.datetime} className="text-gray-500">
                 {post.date}

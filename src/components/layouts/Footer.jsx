@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -39,12 +40,12 @@ const Footer = () => {
                       Say Hello!
                     </small>
                   </div>
-                  <button
-                    type="button"
+                  <Link
+                    to="/contact"
                     className="fill-green-500 border border-gray-200 flex items-center bg-white dark:bg-neutral-800 dark:border-neutral-700 p-2 rounded-full hover:bg-gray-100 transition-colors"
                   >
                     <box-icon name="right-arrow-alt"></box-icon>
-                  </button>
+                  </Link>
                 </div>
                 <div className="flex items-center justify-between gap-6 w-1/2">
                   <div className="text-start">
@@ -53,12 +54,12 @@ const Footer = () => {
                       Browse Projects
                     </small>
                   </div>
-                  <button
-                    type="button"
+                  <Link
+                    to="/showroom"
                     className="fill-green-500 border border-gray-200 inline-flex items-center bg-white dark:bg-neutral-800 dark:border-neutral-700 p-2 rounded-full hover:bg-gray-100 transition-colors"
                   >
                     <box-icon name="right-arrow-alt"></box-icon>
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="w-full">

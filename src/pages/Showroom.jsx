@@ -8,7 +8,7 @@ const webProjects = [
     title: "Logistic Management System",
     href: "#",
     imgBanner:"https://placehold.co/600x400?text=No+Image+Preview",
-    description: "Stream lining a deliveries with modern technologies",
+    description: "Streamlining the logistic management by implementing impressive real-time features of GPS & Chat Messaging.",
     date: "Oct 05, 2023",
     datetime: "2023-10-05",
     category: { title: "Capstone Project", href: "#" },
@@ -54,7 +54,7 @@ const webProjects = [
     imgBanner:
       "https://github.com/gcristianber/color-picking-app-qs/raw/master/screenshots/default-v2.jpg",
     description:
-      " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis illum deleniti ipsum! ",
+      "A simple color picking app that is inspired with the other famous color picker websites.",
     date: "Oct 05, 2023",
     datetime: "2023-10-05",
     category: { title: "Personal", href: "#" },
@@ -87,7 +87,7 @@ const webProjects = [
     href: "#",
     imgBanner: "https://placehold.co/600x400?text=No+Image+Preview",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde.",
+      "An automated payroll management system with employee self-service portal.",
     date: "Oct 05, 2023",
     datetime: "2023-10-05",
     category: { title: "Personal", href: "#" },
@@ -120,7 +120,7 @@ const webProjects = [
     href: "#",
     imgBanner: "https://placehold.co/600x400?text=No+Image+Preview",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde.",
+      "A simple web-based cinema booking system that allows to reserve their seats online.",
     date: "Oct 05, 2023",
     datetime: "2023-10-05",
     category: { title: "Personal", href: "#" },
@@ -187,6 +187,8 @@ const Showroom = () => {
                       alt=""
                       className="absolute inset-0 h-full w-full object-cover"
                     />
+
+                    
                   </div>
                   <div className="mt-4 flex items-center gap-x-4 text-xs">
                     <time dateTime={project.datetime} className="text-gray-500 dark:text-neutral-300">
@@ -194,7 +196,7 @@ const Showroom = () => {
                     </time>
                     <a
                       href={project.category.href}
-                      className="relative z-10 rounded-full bg-gray-50 dark:bg-neutral-800 dark:text-neutral-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                      className="relative z-10 rounded-full bg-gray-50 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                     >
                       {project.category.title}
                     </a>

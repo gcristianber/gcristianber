@@ -39,8 +39,9 @@ const Navbar = () => {
   return (
     <header className=" w-full fixed top-0 left-0 z-50 py-4 bg-white dark:bg-neutral-900">
       <nav className="flex items-center justify-between px-0 sm:px-8 mx-auto max-w-7xl ">
-        <a href="#" className=" flex-1">
-          <img src="./vite.svg" alt="Vite Logo" />
+        <a href="#" className="flex-1">
+          {/* <img src="./vite.svg" alt="Vite Logo" /> */}
+          <h1 className="font-title font-bold inline align-middle text-neutral-900 dark:text-neutral-100">gcris<span className="text-green-500">tian</span>ber</h1>
         </a>
 
         {/* <ul className="hidden lg:flex items-center justify-center gap-4 flex-1 ">
