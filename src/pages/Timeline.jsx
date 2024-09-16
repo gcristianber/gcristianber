@@ -182,7 +182,7 @@ const Timeline = () => {
   return (
     <>
       <section className="relative isolate overflow-hidden py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl mt-10 lg:mt-0 px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-neutral-900 dark:text-neutral-100">
               Experiences
