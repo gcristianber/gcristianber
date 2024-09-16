@@ -37,11 +37,18 @@ const Navbar = () => {
   }, [enabled]);
 
   return (
-    <header className=" w-full fixed top-0 left-0 z-50 py-4 bg-white dark:bg-neutral-900">
-      <nav className="flex items-center justify-between px-0 sm:px-8 mx-auto max-w-7xl ">
-        <a href="#" className="flex-1">
+    <header className=" w-full fixed top-0 left-0 z-40 lg:py-4 bg-white dark:bg-neutral-900">
+      <nav className="lg:hidden flex items-center justify-center px-4 sm:px-8 mx-auto max-w-7xl py-2 ">
+        <h1 className="font-title text-2xl font-bold inline align-middle text-neutral-900 dark:text-neutral-100">
+          gcris<span className="text-green-500">tian</span>ber
+        </h1>
+      </nav>
+      <nav className="flex items-center justify-between px-0 sm:px-8 mx-auto max-w-7xl py-2">
+        <a href="#" className="flex-1 hidden lg:block">
           {/* <img src="./vite.svg" alt="Vite Logo" /> */}
-          <h1 className="font-title font-bold inline align-middle text-neutral-900 dark:text-neutral-100">gcris<span className="text-green-500">tian</span>ber</h1>
+          <h1 className="font-title text-2xl font-bold inline align-middle text-neutral-900 dark:text-neutral-100">
+            gcris<span className="text-green-500">tian</span>ber
+          </h1>
         </a>
 
         {/* <ul className="hidden lg:flex items-center justify-center gap-4 flex-1 ">
@@ -63,11 +70,11 @@ const Navbar = () => {
           ))}
         </ul> */}
 
-        <ul className=" flex justify-center items-center gap-8">
+        <ul className="w-full flex-1 flex justify-center items-center gap-2">
           <li className="w-full text-center">
             <Link
               to="/"
-              className="inline-flex gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500  transition-colors"
+              className="flex flex-col items-center lg:inline-flex lg:flex-row gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500  transition-colors"
             >
               <House size={20} />
               <span className="font-medium text-sm ">Home</span>
@@ -76,7 +83,7 @@ const Navbar = () => {
           <li className="w-full text-center">
             <Link
               to="/timeline"
-              className="inline-flex gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500  transition-colors"
+              className="flex flex-col items-center lg:inline-flex lg:flex-row gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500  transition-colors"
             >
               <BriefcaseBusiness size={20} />
               <span className="font-medium text-sm ">Timeline</span>
@@ -85,7 +92,7 @@ const Navbar = () => {
           <li className="w-full text-center">
             <Link
               to="/showroom"
-              className="inline-flex gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500  transition-colors"
+              className="flex flex-col items-center lg:inline-flex lg:flex-row gap-2 align-middle text-neutral-900 dark:text-neutral-100 hover:text-blue-500  transition-colors"
             >
               <Coffee size={20} />
               <span className="font-medium text-sm ">Showroom</span>
@@ -93,8 +100,8 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex-1">
-          <ul className="hidden lg:flex items-center justify-end gap-4">
+        <div className="hidden lg:block lg:flex-1">
+          <ul className="flex items-center justify-end gap-4">
             <li>
               <Switch
                 checked={enabled}
@@ -130,16 +137,6 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-
-          <div className="flex items-center justify-end">
-            <a
-              href="#"
-              role="button"
-              className="lg:hidden inline-flex items-center bg-white p-2 rounded-full hover:bg-gray-100 transition-colors"
-            >
-              <box-icon name="dots-horizontal-rounded"></box-icon>
-            </a>
-          </div>
         </div>
       </nav>
     </header>

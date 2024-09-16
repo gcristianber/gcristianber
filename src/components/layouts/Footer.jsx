@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="p-8 sm:p-10 lg:flex-auto relative overflow-hidden">
           <div className="flex mb-40">
             <div className="flex justify-between flex-grow ">
-              <div className=" w-full">
+              <div className=" w-full hidden lg:block">
                 <h1 className="font-semibold leading-5 text-neutral-900 dark:text-neutral-100">
                   Let's build &<br />
                   design
@@ -19,21 +19,21 @@ const Footer = () => {
                   Explore
                 </h1>
                 <ul className="">
-                  <li className="font-medium text-sm mb-2 text-neutral-900 dark:text-neutral-100">
+                  <li className="font-medium text-base lg:text-sm mb-2 text-neutral-900 dark:text-neutral-100">
                     <a href="#">Home</a>
                   </li>
-                  <li className="font-medium text-sm mb-2 text-neutral-900 dark:text-neutral-100">
+                  <li className="font-medium text-base lg:text-sm mb-2 text-neutral-900 dark:text-neutral-100">
                     <a href="">Timeline</a>
                   </li>
-                  <li className="font-medium text-sm mb-2 text-neutral-900 dark:text-neutral-100">
-                    <a href="">Services</a>
+                  <li className="font-medium text-base lg:text-sm mb-2 text-neutral-900 dark:text-neutral-100">
+                    <a href="">Showroom</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="flex flex-row-reverse justify-between flex-grow ">
-              <div className="w-full flex flex-col items-end gap-4">
-                <div className="flex items-center justify-between gap-6 w-1/2">
+              <div className="w-full flex flex-col items-start lg:items-end gap-4">
+                <div className="flex items-center justify-between gap-6 w-full lg:w-1/2">
                   <div className="text-start">
                     <h5 className="font-bold leading-3 text-sm text-neutral-900 dark:text-neutral-100">Contact Me</h5>
                     <small className="text-xs font-medium  text-neutral-800 dark:text-neutral-200">
@@ -47,7 +47,7 @@ const Footer = () => {
                     <box-icon name="right-arrow-alt"></box-icon>
                   </Link>
                 </div>
-                <div className="flex items-center justify-between gap-6 w-1/2">
+                <div className="flex items-center justify-between gap-6 w-full lg:w-1/2">
                   <div className="text-start">
                     <h5 className="font-bold leading-3 text-sm text-neutral-900 dark:text-neutral-100">Showroom</h5>
                     <small className="text-xs font-medium  text-neutral-800 dark:text-neutral-200">
@@ -62,7 +62,7 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <div className="w-full">
+              <div className="w-full hidden lg:block">
                 <h1 className="font-semibold text-sm text-violet-500 mb-4">
                   Follow Me
                 </h1>
@@ -120,8 +120,8 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-1/4 left-1/2 transform -translate-x-1/2">
-            <h1 className="text-[12rem] font-extrabold font-title tracking-wider text-neutral-900 dark:text-neutral-100">
+          <div className="absolute -bottom-8 lg:-bottom-1/4 left-1/2 transform -translate-x-1/2">
+            <h1 className="text-8xl lg:text-[14rem] font-extrabold font-title tracking-wider text-neutral-900 dark:text-neutral-100">
               gcris<span className="text-green-500">tian</span>ber
             </h1>
           </div>

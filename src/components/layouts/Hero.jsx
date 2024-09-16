@@ -22,18 +22,19 @@ const Hero = () => {
               </a>
             </div>
             <div className="flex justify-center">
-              <div>
-                <h1 className="text-7xl font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
+              <div className="text-center lg:text-start">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
                   A DESIGNER
                 </h1>
-                <h1 className="text-7xl font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
-                  & DEVELOPER
+                <span className="block lg:hidden text-5xl lg:text-7xl font-bold text-neutral-900 dark:text-neutral-100">&</span>
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
+                  <span className="hidden lg:inline text-5xl lg:text-7xl">&</span> DEVELOPER
                 </h1>
               </div>
             </div>
 
             <div className="w-full max-w-prose text-center mt-5">
-              <p className=" text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+              <p className="text-base lg:text-lg font-semibold text-neutral-700 dark:text-neutral-300">
                 Bringing modern websites to life with exceptional{" "}
                 <span className="text-green-500">Design</span>, seamless{" "}
                 <span className="text-orange-500">Experience</span>, and

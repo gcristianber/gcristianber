@@ -187,7 +187,7 @@ const Timeline = () => {
             <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-neutral-900 dark:text-neutral-100">
               Experiences
             </h2>
-            <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300">
+            <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
             Throughout my career as a developer, I've embraced each opportunity to build, innovate, and solve complex problems. From refining code to crafting seamless user experiences, every project has deepened my expertise, pushing me to continuously evolve in the ever-changing tech landscape.
             </p>
           </div>
@@ -223,7 +223,7 @@ const Timeline = () => {
                       } `}</p>
                     </dt>
                     <dd>
-                      <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+                      <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
                         {experience.jobDescription}
                       </p>
 
@@ -257,7 +257,7 @@ const Timeline = () => {
             <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-neutral-900 dark:text-neutral-100">
               Education
             </h2>
-            <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300">
+            <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
             Throughout my academic journey, each school played a vital role in shaping my skills and perspective. From foundational learning to advanced concepts, these experiences built the framework for my passion, growth, and pursuit of excellence in the field.
             </p>
           </div>
