@@ -5,14 +5,14 @@ const experiences = [
     id: 1,
     companyLogo: {
       imgUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQG7P2KGNvEeEA/company-logo_100_100/company-logo_100_100/0/1708654516290/sandman_software_systems_inc_logo?e=1734566400&v=beta&t=J6lmnRl2FsjRIZRRbiBbRTy58VD796BKu6RTQoTCBFk",
+        "./assets/images/sandman_software_systems_inc_logo.jpg",
       altText: "Sandman Software Systems Inc.",
     },
     companyName: "Sandman Software Systems Inc.",
     jobTitle: "Junior Software Developer",
     jobDescription:
-      "Supports in maintaining and migrating the existing system into a latest version.",
-    workArrangement: "Probationary",
+      "Developed and maintained LGU client portals and pharmaceutical systems using CodeIgniter 3 (PHP), MySQL, HTML, jQuery, and Git, focusing on performance optimization, modular MVC architecture, and secure data handling.",
+    workArrangement: "Remote",
     startDate: "July 2024",
     endDate: "",
     isCurrentJob: true,
