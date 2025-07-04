@@ -30,7 +30,7 @@ const links = [
 const stats = [
   { name: "Built Projects", value: "4" },
   { name: "Satisfied Clients", value: "2" },
-  { name: "Years of Experience", value: "8 months+" },
+  { name: "Years of Experience", value: "1 yr +" },
   { name: "Technologies Mastered", value: "10+" },
 ];
 
