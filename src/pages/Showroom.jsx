@@ -1,14 +1,14 @@
 import React from "react";
 import Stacks from "@/components/layouts/Stacks";
 
-
 const webProjects = [
   {
     id: 1,
     title: "Logistic Management System",
     href: "#",
-    imgBanner:"https://placehold.co/600x400?text=No+Image+Preview",
-    description: "Streamlining the logistic management by implementing impressive real-time features of GPS & Chat Messaging.",
+    imgBanner: "https://placehold.co/600x400?text=No+Image+Preview",
+    description:
+      "Streamlining the logistic management by implementing impressive real-time features of GPS & Chat Messaging.",
     date: "Oct 05, 2023",
     datetime: "2023-10-05",
     category: { title: "Capstone Project", href: "#" },
@@ -143,6 +143,23 @@ const webProjects = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Pure MVC PHP",
+    href: "#",
+    imgBanner: "https://placehold.co/600x400?text=No+Image+Preview",
+    description:
+      "A handcrafted PHP framework that implements the MVC architecture pattern.",
+    date: "Sept 04, 2024",
+    datetime: "2024-04-08",
+    category: { title: "Personal", href: "#" },
+    techStacks: [
+      {
+        imgLogoUrl: "./assets/images/logos/php.svg",
+        altText: "Php",
+      }
+    ],
+  },
 ];
 
 const Showroom = () => {
@@ -170,7 +187,7 @@ const Showroom = () => {
         </div>
       </section>
 
-      <Stacks/>
+      <Stacks />
 
       <section className="relative isolate overflow-hidden py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -187,11 +204,12 @@ const Showroom = () => {
                       alt=""
                       className="absolute inset-0 h-full w-full object-cover"
                     />
-
-                    
                   </div>
                   <div className="mt-4 flex items-center gap-x-4 text-xs">
-                    <time dateTime={project.datetime} className="text-gray-500 dark:text-neutral-300">
+                    <time
+                      dateTime={project.datetime}
+                      className="text-gray-500 dark:text-neutral-300"
+                    >
                       {project.date}
                     </time>
                     <a
@@ -232,7 +250,6 @@ const Showroom = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };
