@@ -121,7 +121,7 @@ const experiences = [
     id: 4,
     companyLogo: {
       imgUrl:
-        "https://placehold.co/56x56/e5e7eb/d1d5db7eb?text=No+Image",
+        "./assets/images/bucor.png",
       altText: "Board of Pardons & Parole",
     },
     companyName: "Board of Pardons & Parole",
