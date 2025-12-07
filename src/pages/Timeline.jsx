@@ -1,5 +1,3 @@
-import React from "react";
-
 const experiences = [
   {
     id: 1,
@@ -11,7 +9,7 @@ const experiences = [
     companyName: "Sandman Software Systems Inc.",
     jobTitle: "Junior Software Developer",
     jobDescription:
-      "Developed and maintained LGU client portals and pharmaceutical systems using CodeIgniter 3 (PHP), MySQL, HTML, jQuery, and Git, focusing on performance optimization, modular MVC architecture, and secure data handling.",
+      "Designs, develops, and maintains LGU eServices using PHP (CodeIgniter and Laravel), MySQL, and JavaScript. Supports government digitalization by building secure and scalable web systems for online payments, tax and billing services, and internal operations, with a strong focus on performance optimization, system reliability, and data accuracy.",
     workArrangement: "Remote",
     startDate: "July 2024",
     endDate: "",
