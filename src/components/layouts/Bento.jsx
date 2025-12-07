@@ -16,7 +16,7 @@ const Bento = () => {
           grid grid-rows-2 grid-cols-2 gap-y-4
           relative"
           >
-            <div className="bg-orange-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-56 aspect-square rounded-full outline outline-[1rem] outline-white" />
+            <div className="bg-orange-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-56 aspect-square rounded-full outline-solid outline-[1rem] outline-white" />
 
             <div className="bg-green-500 col-span-2 row-span-1" />
             <div className=" col-span-2 row-span-1

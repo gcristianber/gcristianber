@@ -195,7 +195,7 @@ const Timeline = () => {
             <ul className="divide-y dark:divide-neutral-800">
               {sortedExperiences.map((experience) => (
                 <li key={experience.id} className="py-8 flex gap-4 items-start">
-                  <a href="#" className="flex-shrink-0">
+                  <a href="#" className="shrink-0">
                     <img
                       className="200 bg-white rounded-lg h-14 w-14 "
                       src={experience.companyLogo.imgUrl}
@@ -269,7 +269,7 @@ const Timeline = () => {
                     key={experience.id}
                     className="py-8 flex gap-4 items-start"
                   >
-                    <a href="#" className="flex-shrink-0">
+                    <a href="#" className="shrink-0">
                       <img
                         className="200 bg-white rounded-lg h-14 w-14 "
                         src={experience.companyLogo.imgUrl}

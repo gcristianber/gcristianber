@@ -173,7 +173,7 @@ const Showroom = () => {
             src="https://images.unsplash.com/photo-1579403124614-197f69d8187b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
-          <div className="w-full h-72 max-h-72 bg-gradient-to-t -z-10 from-white dark:from-neutral-900 absolute top-0 -left-0"></div>
+          <div className="w-full h-72 max-h-72 bg-linear-to-t -z-10 from-white dark:from-neutral-900 absolute top-0 left-0"></div>
 
           <div className="mx-auto max-w-2xl text-center ">
             <h2 className="text-4xl font-bold tracking-tight  sm:text-6xl dark:text-neutral-200">
@@ -198,7 +198,7 @@ const Showroom = () => {
             <ul className="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
               {webProjects.map((project) => (
                 <li key={project.id}>
-                  <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <div className="relative aspect-2/1 overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
                     <img
                       src={project.imgBanner}
                       alt=""

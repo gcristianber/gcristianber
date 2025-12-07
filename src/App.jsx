@@ -27,7 +27,7 @@ const App = () => {
         <div class="fixed bottom-6 right-6 lg:hidden">
           <button
             onClick={toggleDarkMode}
-            class={`p-0 w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center text-neutral-100 hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:text-neutral-100 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none  `}
+            class={`p-0 w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center text-neutral-100 hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:text-neutral-100 active:shadow-lg mouse shadow-sm transition ease-in duration-200 focus:outline-hidden  `}
           >
             {enabled ? (
               <Sun size={24} strokeWidth={2} />

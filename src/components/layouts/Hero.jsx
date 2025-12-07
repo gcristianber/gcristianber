@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="relative isolate px-6 lg:px-8">
       <div className="h-screen flex flex-col items-center">
-        <div className="flex-grow flex items-center justify-center">
+        <div className="grow flex items-center justify-center">
           <div className="">
             <div className="text-center mb-4">
               <a

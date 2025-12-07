@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="mx-auto mt-16 rounded-xl ring-1 ring-gray-200 dark:ring-neutral-800 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
         <div className="p-8 sm:p-10 lg:flex-auto relative overflow-hidden">
           <div className="flex mb-40">
-            <div className="flex justify-between flex-grow ">
+            <div className="flex justify-between grow ">
               <div className=" w-full hidden lg:block">
                 <h1 className="font-semibold leading-5 text-neutral-900 dark:text-neutral-100">
                   Let's build &<br />
@@ -31,7 +31,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-row-reverse justify-between flex-grow ">
+            <div className="flex flex-row-reverse justify-between grow ">
               <div className="w-full flex flex-col items-start lg:items-end gap-4">
                 <div className="flex items-center justify-between gap-6 w-full lg:w-1/2">
                   <div className="text-start">
