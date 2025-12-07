@@ -1,182 +1,177 @@
-const experiences = [
-  {
-    id: 1,
-    companyLogo: {
-      imgUrl:
-        "./assets/images/sandman_software_systems_inc_logo.jpg",
-      altText: "Sandman Software Systems Inc.",
-    },
-    companyName: "Sandman Software Systems Inc.",
-    jobTitle: "Junior Software Developer",
-    jobDescription:
-      "Designs, develops, and maintains LGU eServices using PHP (CodeIgniter and Laravel), MySQL, and JavaScript. Supports government digitalization by building secure and scalable web systems for online payments, tax and billing services, and internal operations, with a strong focus on performance optimization, system reliability, and data accuracy.",
-    workArrangement: "Remote",
-    startDate: "July 2024",
-    endDate: "",
-    isCurrentJob: true,
-    hasTechstacks: true,
-    techstacks: [
-      {
-        name: "CodeIgniter",
-        imgUrl: "./assets/images/logos/codeigniter.svg",
-      },
-      {
-        name: "Php",
-        imgUrl: "./assets/images/logos/php.svg",
-      },
-      {
-        name: "HTML5",
-        imgUrl: "./assets/images/logos/html5.svg",
-      },
-      {
-        name: "CSS3",
-        imgUrl: "./assets/images/logos/css3.svg",
-      },
-      {
-        name: "Javascript",
-        imgUrl: "./assets/images/logos/javascript.svg",
-      },
-      {
-        name: "MySQL",
-        imgUrl: "./assets/images/logos/mysql.svg",
-      },
-    ],
-  },
-  {
-    id: 2,
-    companyLogo: {
-      imgUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaxzOued3isjrAbAJLeYDohtIZIGxfbdKbHQ&s",
-      altText: "VPD Business Solutions Inc.",
-    },
-    companyName: "VPD Business Solutions Inc.",
-    jobTitle: "UI/UX Developer",
-    jobDescription:
-      "Led the enhancement of the SAAS ERP back-office system s user interface design, optimizing functionality and user engagement. Managed and executed two projects as the sole developer, utilizing Laravel (PHP) to meet client expectations efficiently. Additionally, played a pivotal role in the development of a Point of Sale System using Flutter (Dart) as part of the company s software portfolio.",
-    workArrangement: "Contract",
-    startDate: "Nov 2023",
-    endDate: "May 2024",
-    isCurrentJob: false,
-    hasTechstacks: true,
-    techstacks: [
-      {
-        name: "Laravel",
-        imgUrl: "./assets/images/logos/laravel.svg",
-      },
-      {
-        name: "Php",
-        imgUrl: "./assets/images/logos/php.svg",
-      },
-      {
-        name: "HTML5",
-        imgUrl: "./assets/images/logos/html5.svg",
-      },
-      {
-        name: "CSS3",
-        imgUrl: "./assets/images/logos/css3.svg",
-      },
-      {
-        name: "Javascript",
-        imgUrl: "./assets/images/logos/javascript.svg",
-      },
-      {
-        name: "MySQL",
-        imgUrl: "./assets/images/logos/mysql.svg",
-      },
-      {
-        name: "Flutter",
-        imgUrl: "./assets/images/logos/flutter.svg",
-      },
-      {
-        name: "Bootstrap5",
-        imgUrl: "./assets/images/logos/bootstrap.svg",
-      },
-      {
-        name: "Figma",
-        imgUrl: "./assets/images/logos/figma.svg",
-      },
-    ],
-  },
-  {
-    id: 3,
-    companyLogo: {
-      imgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/9/92/Veterans_Memorial_Medical_Center_%28VMMC%29.svg",
-      altText: "Veterans Memorial Medical Center",
-    },
-    companyName: "Veterans Memorial Medical Center",
-    jobTitle: "IT Support Trainee",
-    jobDescription:
-      "Troubleshoots and maintains medical workers' workstations, performs preventive maintenance, and manages tasks like running errands to ensure smooth operation and optimal system functionality.",
-    workArrangement: "Intern",
-    startDate: "April 2023",
-    endDate: "May 2023",
-    isCurrentJob: false,
-    hasTechstacks: false,
-    techstacks: [],
-  },
-  {
-    id: 4,
-    companyLogo: {
-      imgUrl:
-        "./assets/images/bucor.png",
-      altText: "Board of Pardons & Parole",
-    },
-    companyName: "Board of Pardons & Parole",
-    jobTitle: "Office Clerk",
-    jobDescription:
-      "Organizes & maintains the prisoner's documents and helps the officers in their paperworks.",
-    workArrangement: "Intern",
-    startDate: "Dec 2018",
-    endDate: "Jan 2019",
-    isCurrentJob: false,
-    hasTechstacks: false,
-    techstacks: [],
-  },
-];
+// src/components/Timeline.jsx
+import { useEffect, useMemo, useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 
-const educations = [
-  {
-    id: 1,
-    companyLogo: {
-      imgUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgZM7zIuiPWTUyN93M8HOiy17q0OvXxNMm3g&s",
-      altText: "Sandman Software Systems Inc.",
-    },
-    companyName: "Bestlink College of the Philippines",
-    jobTitle: "Bachelor's of Science in Information Technology",
-    jobDescription:
-      "Supports in maintaining and migrating the existing system into a latest version.",
-    startDate: "2019",
-    endDate: "2023",
-  },
-  {
-    id: 2,
-    companyLogo: {
-      imgUrl:
-        "https://www.amaes.edu.ph/wp-content/uploads/2022/11/cropped-AMAES-icon.png",
-      altText: "Sandman Software Systems Inc.",
-    },
-    companyName: "AMACC Fairview Campus",
-    jobTitle: "Information and Communication Technology",
-    jobDescription:
-      "Supports in maintaining and migrating the existing system into a latest version.",
-    startDate: "2017",
-    endDate: "2019",
-  },
-];
+function formatMonthYear(dateString) {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+}
 
-const sortedExperiences = experiences.sort((a, b) => {
-  if (a.isCurrentJob && !b.isCurrentJob) return -1;
-  if (!a.isCurrentJob && b.isCurrentJob) return 1;
+function formatYear(dateString) {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.getFullYear();
+}
 
-  const dateA = a.endDate ? new Date(a.endDate) : new Date();
-  const dateB = b.endDate ? new Date(b.endDate) : new Date();
+function ExperiencesSkeleton() {
+  return (
+    <ul className="divide-y dark:divide-neutral-800">
+      {[1, 2, 3].map((id) => (
+        <li key={id} className="py-8 flex gap-4 items-start animate-pulse">
+          <div className="h-14 w-14 rounded-lg bg-neutral-200 dark:bg-neutral-800" />
+          <div className="flex-1 space-y-3">
+            <div className="h-5 w-40 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-4 w-64 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-3 w-44 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="mt-4 space-y-2">
+              <div className="h-3 w-full rounded bg-neutral-200 dark:bg-neutral-800" />
+              <div className="h-3 w-5/6 rounded bg-neutral-200 dark:bg-neutral-800" />
+            </div>
+            <div className="mt-4 flex gap-3">
+              {[1, 2, 3, 4].map((k) => (
+                <div
+                  key={k}
+                  className="h-8 w-8 rounded-full bg-neutral-200 dark:bg-neutral-800"
+                />
+              ))}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
-  return dateB - dateA;
-});
+function EducationsSkeleton() {
+  return (
+    <ul className="divide-y dark:divide-neutral-800">
+      {[1, 2].map((id) => (
+        <li key={id} className="py-8 flex gap-4 items-start animate-pulse">
+          <div className="h-14 w-14 rounded-lg bg-neutral-200 dark:bg-neutral-800" />
+          <div className="flex-1 space-y-3">
+            <div className="h-5 w-60 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-4 w-48 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-3 w-32 rounded bg-neutral-200 dark:bg-neutral-800" />
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 const Timeline = () => {
+  const [experiences, setExperiences] = useState([]);
+  const [educations, setEducations] = useState([]);
+  const [loadingExperiences, setLoadingExperiences] = useState(true);
+  const [loadingEducations, setLoadingEducations] = useState(true);
+  const [errorExperiences, setErrorExperiences] = useState(null);
+  const [errorEducations, setErrorEducations] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadExperiences = async () => {
+      setLoadingExperiences(true);
+      const { data, error } = await supabase
+        .from('experiences')
+        .select('*')
+        .order('start_date', { ascending: false });
+
+      if (!isMounted) return;
+
+      if (error) {
+        setErrorExperiences(error.message || 'Failed to load experiences.');
+        setExperiences([]);
+      } else {
+        const mapped = (data || []).map((row) => {
+          const isCurrentJob = row.end_date === null;
+          return {
+            id: row.id,
+            companyLogo: row.company_logo || {
+              imgUrl: '',
+              altText: row.organization || '',
+            },
+            companyName: row.organization || '',
+            jobTitle: row.job_title || '',
+            jobDescription: row.job_description || '',
+            workArrangement: row.work_arrangement || '',
+            startDate: row.start_date || null,
+            endDate: row.end_date || null,
+            isCurrentJob,
+            hasTechstacks: Array.isArray(row.tech_stacks) && row.tech_stacks.length > 0,
+            techstacks: Array.isArray(row.tech_stacks) ? row.tech_stacks : [],
+          };
+        });
+        setExperiences(mapped);
+        setErrorExperiences(null);
+      }
+      setLoadingExperiences(false);
+    };
+
+    const loadEducations = async () => {
+      setLoadingEducations(true);
+      const { data, error } = await supabase
+        .from('educations')
+        .select('*')
+        .order('end_date', { ascending: false });
+
+      if (!isMounted) return;
+
+      if (error) {
+        setErrorEducations(error.message || 'Failed to load education.');
+        setEducations([]);
+      } else {
+        const mapped = (data || []).map((row) => ({
+          id: row.id,
+          schoolLogo: row.school_logo || {
+            imgUrl: '',
+            altText: row.school_name || '',
+          },
+          schoolName: row.school_name || '',
+          course: row.course || '',
+          courseDescription: row.course_description || '',
+          startDate: row.start_date || null,
+          endDate: row.end_date || null,
+        }));
+        setEducations(mapped);
+        setErrorEducations(null);
+      }
+      setLoadingEducations(false);
+    };
+
+    loadExperiences();
+    loadEducations();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const sortedExperiences = useMemo(() => {
+    const copy = [...experiences];
+    copy.sort((a, b) => {
+      if (a.isCurrentJob && !b.isCurrentJob) return -1;
+      if (!a.isCurrentJob && b.isCurrentJob) return 1;
+      const endA = a.endDate ? new Date(a.endDate) : new Date();
+      const endB = b.endDate ? new Date(b.endDate) : new Date();
+      return endB - endA;
+    });
+    return copy;
+  }, [experiences]);
+
+  const sortedEducations = useMemo(() => {
+    const copy = [...educations];
+    copy.sort((a, b) => {
+      const endA = a.endDate ? new Date(a.endDate) : new Date(0);
+      const endB = b.endDate ? new Date(b.endDate) : new Date(0);
+      return endB - endA;
+    });
+    return copy;
+  }, [educations]);
+
   return (
     <>
       <section className="relative isolate overflow-hidden py-24 sm:py-32">
@@ -186,65 +181,89 @@ const Timeline = () => {
               Experiences
             </h2>
             <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
-            Throughout my career as a developer, I've embraced each opportunity to build, innovate, and solve complex problems. From refining code to crafting seamless user experiences, every project has deepened my expertise, pushing me to continuously evolve in the ever-changing tech landscape.
+              Throughout my career as a developer, I&apos;ve embraced each opportunity to
+              build, innovate, and solve complex problems. From refining code to crafting
+              seamless user experiences, every project has deepened my expertise, pushing
+              me to continuously evolve in the ever-changing tech landscape.
             </p>
           </div>
-          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-            <ul className="divide-y dark:divide-neutral-800">
-              {sortedExperiences.map((experience) => (
-                <li key={experience.id} className="py-8 flex gap-4 items-start">
-                  <a href="#" className="shrink-0">
-                    <img
-                      className="200 bg-white rounded-lg h-14 w-14 "
-                      src={experience.companyLogo.imgUrl}
-                      alt={experience.companyLogo.altText}
-                    />
-                  </a>
-                  <dl>
-                    <dt>
-                      <h1 className="text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
-                        {experience.jobTitle}
-                      </h1>
-                      <p className="text-base leading-6">
-                        <span className="font-medium underline text-blue-500">
-                          {experience.companyName}
-                        </span>{" "}
-                        ·{" "}
-                        <span className="text-neutral-700 dark:text-neutral-300">
-                          {experience.workArrangement}
-                        </span>
-                      </p>
-                      <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">{`${
-                        experience.startDate
-                      } - ${
-                        experience.isCurrentJob ? "Present" : experience.endDate
-                      } `}</p>
-                    </dt>
-                    <dd>
-                      <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
-                        {experience.jobDescription}
-                      </p>
 
-                      <div className="mt-8">
-                        <ul className="flex flex-wrap gap-4 grayscale dark:grayscale-0">
-                          {experience.hasTechstacks
-                            ? experience.techstacks.map((stack) => (
-                                <li key={stack.name}>
-                                  <img
-                                    src={stack.imgUrl}
-                                    alt={stack.name}
-                                    className="h-8 w-8 object-scale-down"
-                                  />
-                                </li>
-                              ))
-                            : ""}
-                        </ul>
-                      </div>
-                    </dd>
-                  </dl>
-                </li>
-              ))}
-            </ul>
+          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            {errorExperiences && (
+              <p className="mb-4 text-sm text-red-600 dark:text-red-400">
+                {errorExperiences}
+              </p>
+            )}
+
+            {loadingExperiences ? (
+              <ExperiencesSkeleton />
+            ) : (
+              <ul className="divide-y dark:divide-neutral-800">
+                {sortedExperiences.map((experience) => {
+                  const formattedStart = formatMonthYear(experience.startDate);
+                  const formattedEnd = experience.isCurrentJob
+                    ? 'Present'
+                    : formatMonthYear(experience.endDate);
+
+                  return (
+                    <li
+                      key={experience.id}
+                      className="py-8 flex gap-4 items-start"
+                    >
+                      <a href="#" className="shrink-0">
+                        <img
+                          className="bg-white rounded-lg h-14 w-14 object-contain"
+                          src={experience.companyLogo.imgUrl}
+                          alt={experience.companyLogo.altText}
+                        />
+                      </a>
+                      <dl>
+                        <dt>
+                          <h1 className="text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
+                            {experience.jobTitle}
+                          </h1>
+                          <p className="text-base leading-6">
+                            <span className="font-medium underline text-blue-500">
+                              {experience.companyName}
+                            </span>{' '}
+                            ·{' '}
+                            <span className="text-neutral-700 dark:text-neutral-300">
+                              {experience.workArrangement}
+                            </span>
+                          </p>
+                          <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+                            {formattedStart && formattedEnd
+                              ? `${formattedStart} - ${formattedEnd}`
+                              : formattedStart || formattedEnd || ''}
+                          </p>
+                        </dt>
+                        <dd>
+                          <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
+                            {experience.jobDescription}
+                          </p>
+
+                          {experience.hasTechstacks && (
+                            <div className="mt-8">
+                              <ul className="flex flex-wrap gap-4 grayscale dark:grayscale-0">
+                                {experience.techstacks.map((stack) => (
+                                  <li key={stack.name}>
+                                    <img
+                                      src={stack.imgUrl}
+                                      alt={stack.name}
+                                      className="h-8 w-8 object-scale-down"
+                                    />
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </dd>
+                      </dl>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </div>
         </div>
       </section>
@@ -256,49 +275,68 @@ const Timeline = () => {
               Education
             </h2>
             <p className="mt-6 text-base leading-8 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
-            Throughout my academic journey, each school played a vital role in shaping my skills and perspective. From foundational learning to advanced concepts, these experiences built the framework for my passion, growth, and pursuit of excellence in the field.
+              Throughout my academic journey, each school played a vital role in shaping my
+              skills and perspective. From foundational learning to advanced concepts,
+              these experiences built the framework for my passion, growth, and pursuit of
+              excellence in the field.
             </p>
           </div>
+
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-            <ul className="divide-y dark:divide-neutral-800">
-              {educations
-                .map((experience) => (
-                  <li
-                    key={experience.id}
-                    className="py-8 flex gap-4 items-start"
-                  >
-                    <a href="#" className="shrink-0">
-                      <img
-                        className="200 bg-white rounded-lg h-14 w-14 "
-                        src={experience.companyLogo.imgUrl}
-                        alt={experience.companyLogo.altText}
-                      />
-                    </a>
-                    <dl>
-                      <dt>
-                        <h1 className="text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
-                          {experience.jobTitle}
-                        </h1>
-                        <p className="text-base leading-6">
-                          <span className="font-medium underline text-blue-500">
-                            {experience.companyName}
-                          </span>
-                        </p>
-                        <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">{`${experience.startDate} - ${experience.endDate} · Graduated`}</p>
-                      </dt>
-                    </dl>
-                  </li>
-                ))
-                .sort((a, b) => {
-                  if (a.isCurrentJob && !b.isCurrentJob) return -1;
-                  if (!a.isCurrentJob && b.isCurrentJob) return 1;
+            {errorEducations && (
+              <p className="mb-4 text-sm text-red-600 dark:text-red-400">
+                {errorEducations}
+              </p>
+            )}
 
-                  const dateA = a.endDate ? new Date(a.endDate) : new Date();
-                  const dateB = b.endDate ? new Date(b.endDate) : new Date();
-
-                  return dateB - dateA;
+            {loadingEducations ? (
+              <EducationsSkeleton />
+            ) : (
+              <ul className="divide-y dark:divide-neutral-800">
+                {sortedEducations.map((education) => {
+                  const startYear = formatYear(education.startDate);
+                  const endYear = formatYear(education.endDate);
+                  return (
+                    <li
+                      key={education.id}
+                      className="py-8 flex gap-4 items-start"
+                    >
+                      <a href="#" className="shrink-0">
+                        <img
+                          className="bg-white rounded-lg h-14 w-14 object-contain"
+                          src={education.schoolLogo.imgUrl}
+                          alt={education.schoolLogo.altText}
+                        />
+                      </a>
+                      <dl>
+                        <dt>
+                          <h1 className="text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
+                            {education.course}
+                          </h1>
+                          <p className="text-base leading-6">
+                            <span className="font-medium underline text-blue-500">
+                              {education.schoolName}
+                            </span>
+                          </p>
+                          <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">
+                            {startYear && endYear
+                              ? `${startYear} - ${endYear} · Graduated`
+                              : startYear || endYear || ''}
+                          </p>
+                        </dt>
+                        {education.courseDescription && (
+                          <dd>
+                            <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-justify lg:text-left">
+                              {education.courseDescription}
+                            </p>
+                          </dd>
+                        )}
+                      </dl>
+                    </li>
+                  );
                 })}
-            </ul>
+              </ul>
+            )}
           </div>
         </div>
       </section>
